@@ -29,7 +29,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function generateLogo(fileName, data) {
+function generateFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err) {
             throw err
@@ -42,7 +42,7 @@ function generateLogo(fileName, data) {
 const init = () => {
     inquirer.prompt(questions)
         .then((answers) => {
-            renderLogo('logo.svg', shapes(answers));
+            generateFile('logo.svg', shapes(answers));
         });
 };
 

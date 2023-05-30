@@ -1,8 +1,10 @@
 const inquirer = require('inquirer');
 
-const shapes = require('./lib/shapes');
+const Shapes = require('./lib/shapes');
+ 
 
 const fs = require('fs');
+const {Circle, Triangle, Square} = require('./lib/circle-triangle-square');
 
 const questions = [
     {
@@ -16,7 +18,7 @@ const questions = [
         message: 'What color would you like the letters? Type a color or enter a hexadecimal number.',
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'shape',
         message: 'What shape would you like the logo to be?',
         choices: ['circle', 'triangle', 'square']
@@ -42,7 +44,20 @@ function generateFile(fileName, data) {
 const init = () => {
     inquirer.prompt(questions)
         .then((answers) => {
-            generateFile('logo.svg', shapes(answers));
+            let shape;
+            if (answers.shape === 'circle'){
+                shape = new Circle();
+            };
+            if (answers.shape === 'triangle'){
+                shape = new Triangle();
+            };
+            if (answers.shape === 'triangle'){
+                shape = new Square();
+            };
+            shape.renderText(answers.text);
+            shape.setTextColor(answers.letterColor);
+            shape.setColor(answers.shapeColor);
+            generateFile('logo.svg', shape.renderLogo(answers))
         });
 };
 

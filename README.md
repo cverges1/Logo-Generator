@@ -1,4 +1,4 @@
-# Logo Generator   ![My Logo](./logo/logo.svg)
+# Logo Generator  
 
   ## Licensing: MIT [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -34,3 +34,5 @@
   To contact me with additional questions:
   - Github: cverges1
   - Email: vergeschris@gmail.com
+
+   ![My Logo](./logo/logo.svg)

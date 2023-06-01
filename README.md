@@ -1,4 +1,5 @@
-# Logo Generator
+# Logo Generator   ![My Logo](./logo/logo.svg)
+
   ## Licensing: MIT [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
